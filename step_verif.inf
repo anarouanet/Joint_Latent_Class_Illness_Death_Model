@@ -1,0 +1,180 @@
+#### Filename of the data to specify on next line #####    G=4 prop a convergé #############
+output_donnees.txt
+##### Filename of output1 (file with specification and estimations) to specify on next line ##### 
+output.txt
+##### Filename of output2 (file to use for computing external predictions) to specify on next line ##### 
+file_for_predictions.txt
+##### Maximum number of measures per test (not necessarily the exact one) and maximum number of parameters (idem) ##### 
+25 150
+##### Number of subjects ##### 
+3525
+##### Number of longitudinal outcomes (Q) ##### 
+1
+#####  ###### Indicators of outcome-specific transformations: continuous Beta (0) or continuous splines (1) or truncated continuous beta (-1) or ordinal (k=number of modalities)
+0
+### Indicator if a parametric transformation is required ###
+1
+### Indicator if estimation accounts for interval censoring (1=yes) ### If not, time-to-dementia censored at time of death for healthy  people
+1
+##### Fictive range of each outcome (min1 max1 min2 max2 ... minQ maxQ) = real range of the test (min max), except for Beta where min-eps and max+eps (with eps>0) should be specified: ex. -0.5 30.5 for MMSE ##### 
+-0.5 40.5
+##### Real range of each outcome (min1 max1 min2 max2 ... minQ maxQ) ##### 
+0  40
+##### Degree (np) of the polynomious time function for the latent process trajectory ##### 
+1
+##### Indicator of random effects on each component of the time functions (1 if RE 0 if no RE for the np+1 time functions) ##### 
+1 1 1
+#### Number of latent classes (G) ##### 
+4
+###### Number of times-to-events to model
+3
+##### To specify only if a time-to-event is modelled; LIST OF INDICATORS TO SPECIFY ON THE SAME LINE : [1] For each time-to-event, what's the type of baseline risk function: weibull (2) or step function (1) ? [2]  For each time-to-event, is the hazard function common over the classes ? (common=1 ; class-specific=0; proportional=2) ? [3] Is there any left-truncature to acount for ? (yes 1 no 0); [4] What is the number of nodes for the step function ?  (Indicate 0 when only weibull baseline risk functions) and [5] are the nodes equidistants (1) or defined with quantiles (0) ? (any number works for Weibull baseline risk functions)  ; [6] indicator of parametrization (square = 0 or exponential =1) ##### L292##### L292
+2 2 2 0 0 0 1 0 0 0 0 0 0 0
+##### To specify only if splines transformations were chosen for the markers: the number of nodes and then aside, if there are equidistant nodes (1) or chosen at the quantiles (0) or entered manually (2). In the latter case, please enter in the next lines the interior nodes, a line by marker with a splines transformation ##### 
+5 0
+##### Is there an intermediate survival time from which the risk of event changes -sort of time-dependent covariate in the time-to-event model (1 yes and 0 no) ? Indicate aside if it is modelled (1 yes 0 no) #
+0 0
+##### Number of time-dependent covariates in the data file
+0
+##### Indicators for each time-dependent covariate in the longitudinal model: 0 if not in the model; 1 if in the model with a class-common effect; 2 with a class-specific effect (mixture); 3 in the model with a class-common effect and marker-specific contrasts ##### 
+0
+##### Number of (time-independent) covariates in the data file  ##### # REM comment - sex, educ x2, occ, soc eng x2, and event indicator #
+4
+##### Indicator that each covariate is in the latent process mixed model [LAMBDA] (0 if not present, 1 if simple effect, 2 if interaction with time functions)  ##### 
+0 0 2 1
+##### Indicator that each covariate effect in the latent process mixed model has a class-specific effect (mixture) (1 yes/0 no)   ##### 
+0 0 0 0
+##### Indicator that each covariate is in the logit model for latent class-membership (1 yes/0 no)   ##### 
+0 0 0 0 
+##### Indicator that each covariate corresponds to the death indicator (1 yes/0 no)   ##### 
+0 1 0 0 
+##### Indicator that each covariate corresponds to the dementia indicator (1 yes/0 no)   ##### 
+1 0 0 0
+##### Indicator that each covariate is included in each of the event models (0 if not present/ 1 if common effect /2 if class-specific effect): ** if no event: specify 0 for all the covariates; ** if one event, specify one line with 0, 1 or 2 for each covariate; ** if K times-to-events, specify one line for each outcome with 0, 1 or 2 for each covariate, and a K+1 line indicating 0 or 1 for each covariate, 1 if the effect is the same for all the events or 0 otherwise (by default, 0 should be chosen)  #####  If semi-markov, add 1 on the 3rd line if transition 12 is adjusted on Tdem
+0 0 1 1
+0 0 1 1 
+0 0 1 1
+##### Indicator that each covariate has a marker-specific contrast (0 if not, 1 if simple effect, 2 if interaction with time function)  ##### 
+0 0 0 0
+##### Enter initial values for the logit model of class-membership (G-1 values for intercepts and then G-1 values per covariate in the same order as in the list above) ##### 
+0 0 0 0
+##### Are these parameters estimated ? (0=no 1=yes for each parameter)     ##### 
+1 1 1 1
+##### If time-to-event modelled, enter initial values for the hazard functions: the number of parameters depends on the number of events, the type of hazard and whether it is specific or common over classes (specify all the parms for the first event, then the second, etc) #####   
+  5.09605497315848     
+   5.68758041045708     
+   4.96940050172234     
+   6.08926967216590     
+  0.114075860646072     
+  0.108806839679072     
+  9.944315710668675E-002
+  0.104168905038354     
+   2.72893928053118     
+   2.88501354407285     
+   4.38530349330980     
+   3.55541339128356     
+  0.112809925263783     
+  0.110682383579185     
+  0.102600810772684     
+  0.107444611475506     
+   2.77501845426241     
+   3.97144103641687     
+   3.65448034678208     
+   3.53921331200517     
+  0.118222082365250     
+  0.108125053911013     
+  0.105137575358413     
+  0.108399418932309
+##### Are these parameters estimated ? (0=no 1=yes)  ##### 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  1 1 1 1 1 1 1 1   1 1 1 1 1 1 1 1 1 
+##### (If time-to-event modelled), enter initial values for the covariates in the event models  ##### L619  
+ -1.17594263624684     
+ -6.702487093426944E-002
+ -0.293253308985996     
+ -0.706096517118250     
+ -1.822306187864605E-003
+ -0.537576082154311   
+##### Are these parameters estimated ? (0=no 1=yes)  ##### 
+1 1 1 1 1 1
+##### Changepoint for each class
+ 84.2101026779364     
+   82.5902009657806     
+   89.1724194134656     
+   86.2264493851613
+##### Are these parameters estimated ? (0=no 1=yes)  ##### 
+1 1 1 1
+##### Enter initial values for the latent process mixed model [LAMBDA] : [1] enter the parameters of the 2*(np+1) time functions (potentially with class-specific effects). For identifiability, make sure that the Gth intercept is 0 and not estimated. [2] Enter the time-dependent covariate effects. [3] Then enter time-independent covariate effects (if there's a mixture effect, input the G values this covariate, and remind that initial values for time-independent covariates are inputed in the same order as the order of the covariates listed above.  #####  
+0
+ 2.52633784976399     
+   3.50750952484457     
+   2.75960888955232     
+  -8.95038151576255     
+  -2.38246864680187     
+  -1.03893784193528     
+  -1.45807089925568     
+  -6.68396055139494     
+  -1.37933737314261     
+ -0.557963366723105     
+ -0.709920798637834     
+   1.28073978603698     
+ -2.614797463471972E-003
+ -5.292336135572100E-003
+  9.117493436229701E-002
+#Are these parameters estimated ? (0=no 1=yes). Make sure the Gth intercept is 0 and not estimated to ensure identifiability. ##### 
+  0  1  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+##### Enter initial values for the marker-specific contrasts: Q-1 effects per covariate #####
+
+##### Are these parameters estimated ? (0=no 1=yes) #####
+
+##### Enter initial values for the transformation parameters of each marker: 4 parameters for a Beta, Number of nodes +2 for I-splines, Number of modalities -1 for a threshold model  #####     
+-0.758528599451578     
+  9.879631508911986E-002
+  0.587470878619839     
+  4.684580914905025E-002
+#####are the parameters estimated ? (0=no 1=yes)  ##### 
+1 1 1 1
+##### Indicator of the random-effect covariance matrix structure (0 if unstructured matrix / 1 if diagonal matrix) ##### 
+0
+##### Enter initial variance-covariance matrix of the random effects (1/2 superior matrix column by column). For identifiability, the variance of the intercept should be 1 and should not be estimated ##### 
+   1.00000000000000     
+ 0.174721569268904       0.233086917980698     
+ -0.766323718467211      -0.353746814384704        1.70766384962777  
+##### Are these parameters estimated ? (0=no 1=yes) Make sure the variance of the intercept is not be estimated and equals 1##### 
+0 1 1 1 1 1 1
+##### Enter initial values for the class-specific proportional parameter in the VC matrix (G-1 parms - should be constrained to 1 (and not estimated) if a common VC matrix over classes is assumed) ##### 
+ 1.24422348612486     
+   1.12117785126174     
+   1.01276948576064   
+#### Are these parameters estimated ? (0=no 1=yes) ##### 
+1 1 1
+##### When more than 1 longitudinal outcome is modelled: initial values for the standard error of the marker-specific random intercepts. When no random intercept is assumed or only one marker is modelled, the value should be 0 and should not be estimated ##### 
+0     
+##### Are these parameters estimated ? (0=no 1=yes). Make sure this standard-error is constrained to 0 and not estimated for a single outcome modelled ##### 
+0   
+##### Indicator of autocorrelation structure in the latent process mixed model (0=nothing ; 1=Brownien ; 2=AR) ##### 
+0
+##### Initial values of the autocorrelation errors (1 parms for Brownian, 2 parms for AR, 0 parms if not) and aside, initial values of the Q marker-specific standard errors of independent gaussian errors  #####0.904975687239165     
+ 0.887000226803145       
+##### Are these parameters estimated ? (0=no 1=yes) ##### 
+1 
+##### Number of simulations for the predicted latent process trajectories and survival functions (Monte Carlo) ##### 
+200
+#### Number of points for the Gaussian quadrature (used for ordinal outcomes only in case of outcome-pecific random-intercept and/or a single random-effect) - possible values: 5,7,9,15,20,25,30,40,50 ##### 
+20
+##### Number of classes of time for the mean predicted trajectories ##### 
+8
+##### Vector of cutoffs for the classes of time (# of values = # of classes indicated above - 1) ##### 
+0.5 1 1.5 2 2.5 3 3.5
+##### Maximum of iterations for the Marquardt algorithm ##### 
+300
+##### Thresholds for the three convergence criteria (on parameters, on likelihood, on derivatives (by default, put 0.0001 0.0001 0.001 but they can be relaxed a little)  ##### 
+0.0001 0.0001 0.01
+##### scoretest calculation  ? Score test YT, number of transition to test
+1 1
+#######################    END OF BLOCK   ###########################################
+
+
+
+
+
+
